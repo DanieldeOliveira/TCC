@@ -9,9 +9,7 @@ import java.util.Locale;
 
 import utils.ServerUtils;
 
-/**
- * Created by admin on 13/06/2016.
- */
+
 public class CastApplication extends Application {
 
     /* Instancia da CastApplication */
@@ -74,5 +72,43 @@ public class CastApplication extends Application {
         VideoCastManager.initialize(this,options);
         ServerUtils.initialize();
 
+    }
+
+
+    public static CastApplication getInstance() {
+        return instance;
+    }
+
+    public int getWidthTV() {
+        return widthTV;
+    }
+
+    public void setWidthTV(int widthTV) {
+        this.widthTV = widthTV;
+    }
+
+    public int getHeightTV() {
+        return heightTV;
+    }
+
+    public void setHeightTV(int heightTV) {
+        this.heightTV = heightTV;
+    }
+
+    public int getContador() {
+        return contador++;
+    }
+
+    public int getWidthTelaSmartphone() {
+        return widthTelaSmartphone;
+    }
+
+
+    public int getHeightTelaSmartphone() {
+        return heightTelaSmartphone;
+    }
+
+    public void setHeightTelaSmartphone(int heightTelaSmartphone) {
+        this.heightTelaSmartphone = heightTelaSmartphone;
     }
 }
