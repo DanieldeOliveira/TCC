@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CastTV</string>
+    <string name="nameSpaceComunicaoChromeCast">urn:x-cast:DevCastSenderToChromecast</string>
+    <string name="app_id">87376AA0</string>
 </resources>
