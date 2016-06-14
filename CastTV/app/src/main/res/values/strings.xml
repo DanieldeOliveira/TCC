@@ -1,5 +1,16 @@
 <resources>
     <string name="app_name">CastTV</string>
+
+
+    <!-- String com o endereço do namespace utilizado na comunicação entre o chromecast e o smartphoen -->
     <string name="nameSpaceComunicaoChromeCast">urn:x-cast:DevCastSenderToChromecast</string>
+
+    <!-- String com o ID registrado no SDK do Google Cast -->
     <string name="app_id">87376AA0</string>
+
+    <!-- String utilizadas nos labels dos botões -->
+    <string name="addVdo">Adicionar vídeo</string>
+    <string name="addImg">Adicionar Imagem</string>
+    <string name="addComent">Adicionar Comentario</string>
+    <string name="listaElementos">Lista de medias enviadas</string>
 </resources>
