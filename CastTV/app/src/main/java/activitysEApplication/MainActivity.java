@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -36,13 +37,14 @@ import utils.VideoUtils;
 public class MainActivity extends AppCompatActivity {
 
 
+
     /* Tags para identificação do tipo de mídia deve ser exibida na abretura do Galery */
 
     public static final int IMAGEM_INTERNA = 1;
     public static final int VIDEO_INTERNO = 2;
 
 
-    private static String TAG = "mensagemParaOSender";
+    private static String TAG = "LogsCastTV";
 
 
     private boolean mIsHoneyCombOrAbove = Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB;
@@ -84,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d(TAG,"Entrou no onCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -193,6 +196,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+
+        Log.d(TAG,"Entrou no onCreateOptionsMenu");
         getMenuInflater().inflate(R.menu.menu_main, menu);
         mediaRouteMenuItem = videoCastManager.addMediaRouterButton(menu,R.id.media_route_menu_item);
         return true;
@@ -200,6 +205,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
+        Log.d(TAG,"Entrou no onResume");
         videoCastManager = VideoCastManager.getInstance();
         videoCastManager.incrementUiCounter();
         super.onResume();
@@ -208,9 +214,22 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         videoCastManager.decrementUiCounter();
+        Log.d(TAG,"Entrou no onPause");
         super.onPause();
     }
 
+    @Override
+    protected void onRestart() {
+        Log.d(TAG,"Entrou no onRestart");
+        super.onRestart();
+    }
+
+    @Override
+    protected void onDestroy() {
+        Log.d(TAG,"Entrou no onDestroy");
+        super.onDestroy();
+    }
+    
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -221,11 +240,11 @@ public class MainActivity extends AppCompatActivity {
 
                 uriSelecionada = data.getData();
                 path = VideoUtils.getPathVideo(uriSelecionada,getApplicationContext());
-                //file = new File(path);
+                file = new File(path);
                 urlFinal = ServerUtils.enderecoServidor(getApplicationContext()) + path.toString()
                         + "?tipo=vdo";
 
-                castUtils.startVideo(urlFinal, VideoUtils.getDuracaoVideo(getApplicationContext(),path),"Tem que colocar o nome do video!");
+                castUtils.startVideo(urlFinal, VideoUtils.getDuracaoVideo(getApplicationContext(),path),file.getName());
 
             }
 

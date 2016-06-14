@@ -111,4 +111,5 @@ public class CastApplication extends Application {
     public void setHeightTelaSmartphone(int heightTelaSmartphone) {
         this.heightTelaSmartphone = heightTelaSmartphone;
     }
+
 }
