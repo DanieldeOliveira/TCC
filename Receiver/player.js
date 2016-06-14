@@ -53,6 +53,7 @@
 var sampleplayer = sampleplayer || {};
 var messageBusSenderToChromecast;
 var dimensoesTela;
+var controleInsercao = false;
 
 
 
@@ -1493,6 +1494,7 @@ sampleplayer.CastPlayer.prototype.onEnded_ = function() {
   this.hidePreviewMode_();
   this.interacao.style.display = 'none';
   limparTela();
+  controleInsercao = false;
 };
 
 
@@ -1638,6 +1640,8 @@ sampleplayer.CastPlayer.prototype.onLoad_ = function(event) {
       /** @type {!cast.receiver.MediaManager.LoadRequestData} */ (event.data),
       event.senderId));
   this.interacao.style.display = 'block';
+  controleInsercao = true;
+
 
 
 
