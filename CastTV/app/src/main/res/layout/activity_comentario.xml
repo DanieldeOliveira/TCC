@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/include_toolbar"/>
+    <include layout="@layout/toolbar_personalizado"/>
 
 
     <EditText
@@ -32,14 +32,14 @@
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_marginRight="5dp"
-            android:text="@string/btn_enviarComentario"/>
+            android:text="@string/label_enviarComentario"/>
 
         <Button
             android:id="@+id/btn_limparComentario"
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_marginRight="2dp"
-            android:text="@string/limpar_comentario"/>
+            android:text="@string/label_limpar_comentario"/>
 
     </LinearLayout>
 

@@ -9,10 +9,12 @@
     <string name="app_id">87376AA0</string>
 
     <!-- String utilizadas nos labels dos botões -->
-    <string name="addVdo">Adicionar vídeo</string>
-    <string name="addImg">Adicionar Imagem</string>
-    <string name="addComent">Adicionar Comentario</string>
-    <string name="listaElementos">Lista de medias enviadas</string>
+    <string name="label_addVdo">Adicionar vídeo</string>
+    <string name="label_addImg">Adicionar Imagem</string>
+    <string name="label_addComent">Adicionar Comentario</string>
+    <string name="label_listaElementos">Lista de medias enviadas</string>
+    <string name="label_enviarComentario">Enviar</string>
+    <string name="label_limpar_comentario">Limpar</string>
 
 
 </resources>

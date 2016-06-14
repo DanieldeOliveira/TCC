@@ -221,11 +221,11 @@ public class MainActivity extends AppCompatActivity {
 
                 uriSelecionada = data.getData();
                 path = VideoUtils.getPathVideo(uriSelecionada,getApplicationContext());
-                file = new File(path);
+                //file = new File(path);
                 urlFinal = ServerUtils.enderecoServidor(getApplicationContext()) + path.toString()
                         + "?tipo=vdo";
 
-                castUtils.startVideo(urlFinal, VideoUtils.getDuracaoVideo(getApplicationContext(),path),file.getName());
+                castUtils.startVideo(urlFinal, VideoUtils.getDuracaoVideo(getApplicationContext(),path),"Tem que colocar o nome do video!");
 
             }
 
