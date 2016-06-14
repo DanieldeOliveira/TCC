@@ -7,10 +7,9 @@ import android.os.Build;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
-import activitys.CastApplication;
+import activitysEApplication.CastApplication;
 
 /**
  * Created by admin on 13/06/2016.
