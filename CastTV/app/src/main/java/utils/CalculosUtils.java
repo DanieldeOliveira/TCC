@@ -3,18 +3,16 @@ package utils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import activitys.CastApplication;
+import activitysEApplication.CastApplication;
 
 /**
  * Created by admin on 13/06/2016.
  */
 public class CalculosUtils {
 
+    public static JSONObject calcularPosicao(float xSender, float ySender,CastApplication castApplication) throws JSONException {
 
-    private JSONObject dimensoes;
-
-    public JSONObject calcularPosicao(int xSender, int ySender,CastApplication castApplication) throws JSONException {
-
+        JSONObject dimensoes;
         castApplication = CastApplication.getInstance();
         dimensoes = new JSONObject();
         int xEnviar = (int) ((xSender * castApplication.getWidthTV())/castApplication.getWidthTelaSmartphone());
