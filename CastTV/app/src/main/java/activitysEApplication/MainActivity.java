@@ -229,7 +229,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG,"Entrou no onDestroy");
         super.onDestroy();
     }
-    
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
